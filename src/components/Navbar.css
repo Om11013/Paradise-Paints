@@ -1,0 +1,70 @@
+/* Reset basic styles */
+body, ul, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  
+  /* Navbar container */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+  }
+  
+  /* Logo and Site Name */
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+  
+  .site-name {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Navbar links */
+  .navbar-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-links li {
+    margin-left: 20px;
+  }
+  
+  .navbar-links a {
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links a:hover {
+    color: #00bcd4;
+  }
+  
+  /* Register button styling */
+  .register-button {
+    background-color: #00bcd4;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register-button:hover {
+    background-color: #0196a4;
+  }
+  
