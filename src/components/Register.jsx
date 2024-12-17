@@ -11,7 +11,7 @@ const Register=() =>{
 
   });
 
-  const navigate = useNavigate();
+ 
 
 
   const handleChange = (e)=>{
@@ -23,8 +23,6 @@ const Register=() =>{
     e.preventDefault();
 
     try{
-    
-    // await axios.post('http://localhost:9090/signup', formData).then(res => res.data);
     alert('signup successful');
 
   }

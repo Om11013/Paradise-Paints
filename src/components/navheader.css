@@ -1,0 +1,81 @@
+/* Reset basic styles */
+body, ul, li, a, h1 {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+/* Ensure the navbar stays at the top of the page */
+.navbar {
+  position: fixed; /* Fixed position to stick at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the page */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #64a8d2; /* Background color */
+  padding: 10px 20px; /* Spacing inside the navbar */
+  z-index: 1000; /* Ensure the navbar is above other elements */
+}
+
+/* Logo and site name styling */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 30px; /* Adjust the height of the logo */
+  width: auto; /* Maintain the aspect ratio */
+  margin-right: 10px; /* Add space between the logo and the site name */
+}
+
+.site-name {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Navbar links styling */
+.navbar-links {
+  display: flex; /* Align items horizontally */
+  align-items: center;
+}
+
+.navbar-links li {
+  margin-left: 20px;
+}
+
+.navbar-links a {
+  color: #fff;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #00bcd4;
+}
+
+/* Register button styling */
+.register-button {
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #0196a4;
+}
+
+/* Add margin to the page content so it doesn't overlap the navbar */
+body {
+  padding-top: 70px; /* Adjust according to the navbar height */
+}
