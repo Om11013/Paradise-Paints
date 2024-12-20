@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const Register = () => {
   const [formData, setFormData] = useState({
     name: '',
     contact: '',
     email: '',
-    password: ''
-  });
+    password: '',
+  })
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
-      alert('signup successful');
+      alert('signup successful')
     } catch (error) {
-      console.error('Signup error:', error);
-      alert('Signup failed. Please try again.');
+      console.error('Signup error:', error)
+      alert('Signup failed. Please try again.')
     }
-  };
+  }
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-50">
@@ -90,7 +90,7 @@ const Register = () => {
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Register;
+export default Register
