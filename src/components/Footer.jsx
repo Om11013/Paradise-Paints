@@ -1,16 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
+  const [query, setQuery] = useState('')
+
+  const handleQueryChange = (event) => {
+    setQuery(event.target.value)
+  }
+
+  const handleSendQuery = async () => {
+    console.log('User Query:', query)
+    // try {
+    //   const response = await fetch('https://your-backend-endpoint.com/api/send-query', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify({ query }),
+    //   });
+    //   if (response.ok) {
+    //     alert('Query sent successfully!');
+    //   } else {
+    //     alert('Failed to send query. Please try again.');
+    //   }
+    // } catch (error) {
+    //   console.error('Error sending query:', error);
+    //   alert('An error occurred. Please try again later.');
+    // }
+  }
+
   return (
     <footer className="fixed bg-[#64a8d2] bottom-0 start-0 end-0 text-center">
       <div className="container grid mx-auto md:grid-cols-3 gap-10">
         <div>
           {/* About Section */}
           <h2 className="text-lg font-semibold my-1">Type Your Query Here</h2>
-          <textarea></textarea>
+          <textarea
+            value={query}
+            onChange={handleQueryChange}
+            className="w-full p-2 border border-gray-300 rounded-md"
+          ></textarea>
           <br />
           <button
+            onClick={handleSendQuery}
             className="bg-[#00bcd4] text-white border-none rounded-md px-3.5 py-1.5 cursor-pointer 
                          transition-colors duration-300 hover:bg-[#0196a4]"
           >
@@ -45,7 +77,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          {/* Conact */}
+          {/* Contact */}
           <h2 className="text-lg font-semibold my-1">Contact</h2>
           <ul className="text-sm space-y-2">
             <li>Email: contact@example.com</li>
@@ -60,4 +92,5 @@ const Footer = () => {
     </footer>
   )
 }
+
 export default Footer
