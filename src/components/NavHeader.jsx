@@ -25,7 +25,7 @@ const NavHeader = () => {
         </li>
         <li className="ml-5">
           <Link 
-            to="/about" 
+            to="/aboutus" 
             className="text-white text-base px-2.5 py-1.5 transition-colors duration-300 hover:text-[#00bcd4]"
           >
             About
