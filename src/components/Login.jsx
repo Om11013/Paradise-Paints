@@ -1,10 +1,14 @@
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   })
+
+  const navigate=useNavigate();
 
   const handleChange=(e)=>{
 
@@ -14,7 +18,17 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      alert('login successful')
+        
+        const userData  = await axios.post('http://localhost:9090/verifyUser', formData).then(res => res.data);
+        
+        if(userData!=null){
+        localStorage.setItem("user", JSON.stringify(userData));
+        navigate('/')
+        // alert('Login successful!');
+        }
+        else{
+            navigate('/register')
+        }
     } catch (error) {
       console.error('login error:', error)
       alert('login failed. Please try again.')

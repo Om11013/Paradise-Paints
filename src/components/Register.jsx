@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import Footer from './Footer'
+import axios from 'axios';
+
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +18,10 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      alert('signup successful')
+      const userData  = await axios.post('http://localhost:9090/signup', formData).then(res => res.data);
+      localStorage.clear();
+      localStorage.setItem("user", JSON.stringify(userData));
+      alert('Signup successful!');
     } catch (error) {
       console.error('Signup error:', error)
       alert('Signup failed. Please try again.')

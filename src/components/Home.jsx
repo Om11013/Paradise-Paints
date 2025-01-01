@@ -6,7 +6,7 @@ import Footer from './Footer'
 
 const Home = () => {
   return (
-    <home className="fixed inset-0 flex items-center justify-center text-white bg-slate-800">
+    <div className="fixed inset-0 flex items-center justify-center text-white bg-slate-800">
       <NavHeader />
       <div className="max-w-[800px] mt-[-96px] w-full mx-auto h-screen text-center flex flex-col justify-center">
         <p className="text-red-300 font-bold text-2xl mb-4">Welcome to Paradise Paints</p>
@@ -22,7 +22,7 @@ const Home = () => {
         </Link>
       </div>
       <Footer />
-    </home>
+    </div>
   )
 }
 
