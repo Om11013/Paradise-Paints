@@ -4,27 +4,47 @@ import exteriorPaint from '../assets/exterior_paint.jpg'
 import interiorPaint from '../assets/interior_paint.jpg'
 import wallTexture from '../assets/wall_texture.jpg'
 import waterProofing from '../assets/waterproofing.jpg'
+import axios from 'axios'
 
-const imageMap = {
-  exteriorPaint,
-  interiorPaint,
-  wallTexture,
-  waterProofing,
-}
+// const imageMap = {
+//   exteriorPaint,
+//   interiorPaint,
+//   wallTexture,
+//   waterProofing,
+// }
 
 const Services = () => {
   const [services, setServices] = useState([])
 
-  useEffect(() => {
-    // Simulate API fetch with setTimeout
-    setTimeout(() => {
-      setServices(servicesData.services)
-    }, 1000) // 1 second delay to simulate loading
-  }, [])
 
-  if (services.length === 0) {
-    return <div className="h-screen flex justify-center items-center">Loading...</div>
-  }
+    useEffect(()=>{
+      fetchServices();
+    },[])
+
+    const fetchServices = async ()=>{
+      try{
+
+        const response = await axios.get('http://localhost:9090/allServices')
+        setServices(response.data);
+
+      }
+      catch(error){
+        console.error(error)
+      }
+    }
+
+
+
+  // useEffect(() => {
+  //   // Simulate API fetch with setTimeout
+  //   setTimeout(() => {
+  //     setServices(servicesData.services)
+  //   }, 1000) // 1 second delay to simulate loading
+  // }, [])
+
+  // if (services.length === 0) {
+  //   return <div className="h-screen flex justify-center items-center">Loading...</div>
+  // }
 
   return (
     <div className="inset-0 items-center justify-center fixed container mx-auto my-10 py-8">
@@ -33,7 +53,7 @@ const Services = () => {
         {services.map((service) => (
           <div key={service.id} className="bg-white rounded-lg shadow-md p-4 text-center">
             <img
-              src={imageMap[service.imageKey]}
+              src={service.url}
               alt={service.name}
               className="w-full h-48 object-cover rounded-md mb-4"
             />
