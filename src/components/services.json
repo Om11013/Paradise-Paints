@@ -1,0 +1,29 @@
+{
+    "services": [
+      {
+        "id": 1,
+        "name": "Exterior Paints",
+        "imageKey": "exteriorPaint",
+        "stock": true
+      },
+      {
+        "id": 2,
+        "name": "Interior Paints",
+        "imageKey": "interiorPaint",
+        "stock": false
+      },
+      {
+        "id": 3,
+        "name": "Wall Textures",
+        "imageKey": "wallTexture",
+        "stock": true
+      },
+      {
+        "id":4,
+        "name": "Water Proofing",
+        "imageKey": "waterProofing",
+        "stock": false
+      }
+    ]
+  }
+  
