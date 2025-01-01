@@ -21,12 +21,14 @@ const Login = () => {
         
         const userData  = await axios.post('http://localhost:9090/verifyUser', formData).then(res => res.data);
         
-        if(userData!=null){
+        if(userData){
+        localStorage.clear();
         localStorage.setItem("user", JSON.stringify(userData));
+        alert('Login successful!');
         navigate('/')
-        // alert('Login successful!');
         }
         else{
+            alert('Login unsuccessful');
             navigate('/register')
         }
     } catch (error) {
