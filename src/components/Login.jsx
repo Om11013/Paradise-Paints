@@ -1,110 +1,77 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { useState } from "react";
+const Login = () => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  })
 
-function Footer() {
-  const [query, setQuery] = useState('')
-  const maxChars = 250
+  const handleChange=(e)=>{
 
-  useEffect(() => {
-    console.log('Footer Loaded ')
-  }, [])
+    setFormData({...formData,[e.target.name]:e.target.value})
+  }
 
-  // const handleInputChange = (e) => {
-  //   if (e.target.value.length <= maxChars) {
-  //     setQuery(e.target.value)
-  //   }
-  // }
-
-  const handleSend = () => {
-    console.log('Send button clicked!')
-    console.log('Current query value:', query)
-
-    alert('Send button clicked!')
-    // Uncomment this when integrating with backend
-    // try {
-    //   const response = await fetch('https://your-backend-url.com/api/queries', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify({ query }),
-    //   });
-
-    //   if (response.ok) {
-    //     alert('Query sent successfully!');
-    //     setQuery(''); // Clear the textarea
-    //   } else {
-    //     alert('Failed to send query. Please try again.');
-    //   }
-    // } catch (error) {
-    //   console.error('Error sending query:', error);
-    //   alert('Error sending query. Please check the console for details.');
-    // }
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      alert('login successful')
+    } catch (error) {
+      console.error('login error:', error)
+      alert('login failed. Please try again.')
+    }
   }
 
   return (
-    <footer className="fixed bg-[#64a8d2] bottom-0 start-0 end-0 text-center">
-      <div className="container grid mx-auto md:grid-cols-3 gap-10">
-        <div>
-          {/* Query Section */}
-          <h2 className="text-lg font-semibold my-1">Type Your Query Here</h2>
-          <textarea
-            value={query}
-            // onChange={handleInputChange}
-            className="w-full h-24 p-2 rounded-md"
-            placeholder="Write your query here..."
-          />
-          <p className="text-sm text-gray-700">{maxChars - query.length} characters remaining</p>
+    <div className="fixed inset-0 flex items-center justify-center bg-slate-800">
+      <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8 space-y-6">
+        <h2 className="text-3xl font-bold text-center text-gray-900">Sign in</h2>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="space-y-4">
+
+
+          <div className="space-y-2">
+              <label className="text-sm font-medium text-gray-700">Email</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                placeholder="Enter your email"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm font-medium text-gray-700">Password</label>
+              <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+                placeholder="Enter your password"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900"
+              />
+            </div>
+
+
+          </div>
+
           <button
-            onClick={handleSend}
-            className="bg-[#00bcd4] text-white border-none rounded-md px-3.5 py-1.5 cursor-pointer 
-                         transition-colors duration-300 hover:bg-[#0196a4]"
+            type="submit"
+            className="w-full py-3 px-4 bg-blue-600 hover:bg-green-700 text-white font-medium rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
-            Send
+            Login
           </button>
-          <p className="text-sm mt-2">We deliver quality services with customer satisfaction as our priority.</p>
-        </div>
-        <div>
-          {/* Quick Links */}
-          <h2 className="text-lg font-semibold my-1">Quick Links</h2>
-          <ul>
-            <li>
-              <Link to="/" className="hover:underline">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="#services" className="hover:underline">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link to="#about" className="hover:underline">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link to="#contact" className="hover:underline">
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          {/* Contact */}
-          <h2 className="text-lg font-semibold my-1">Contact</h2>
-          <ul className="text-sm space-y-2">
-            <li>Email: contact@example.com</li>
-            <li>Phone: +123 456 7890</li>
-            <li>Address: 123 Main Street, City</li>
-          </ul>
-        </div>
-      </div>
-      <div className="text-center border-gray-700 border-t mt-2 p-3">
-        <p>© {new Date().getFullYear()} Paradise Paints. All rights reserved.</p>
-      </div>
-    </footer>
+          </form>
+          </div>
+          </div>
+
   )
+
+
+
 }
 
-export default Footer
+export default Login;

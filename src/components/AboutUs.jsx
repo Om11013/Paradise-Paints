@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutUs = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="fixed inset-0 flex items-center justify-center bg-slate-800">
       <div className="w-full max-w-3xl text-center bg-white shadow-md rounded-lg p-6">
         <h2 className="text-2xl font-bold mb-6">About Paradise Paints</h2>
         <p className="text-gray-700 mb-4">

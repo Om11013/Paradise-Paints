@@ -6,7 +6,7 @@ import AboutUs from './components/AboutUs.jsx'
 import Services from './components/Services'
 import Contact from './components/Contact'
 import Register from './components/Register'
-import Login from './components/Login'
+ import Login from './components/Login'
 
 function App() {
   return (

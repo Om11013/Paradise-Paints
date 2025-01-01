@@ -24,7 +24,7 @@ const Register = () => {
   }
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-gray-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-slate-800">
       <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8 space-y-6">
         <h2 className="text-3xl font-bold text-center text-gray-900">Register</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -86,7 +86,7 @@ const Register = () => {
             type="submit"
             className="w-full py-3 px-4 bg-blue-600 hover:bg-green-700 text-white font-medium rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
-            Sign up
+            Enquire Now
           </button>
         </form>
       </div>

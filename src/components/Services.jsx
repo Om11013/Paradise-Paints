@@ -3,12 +3,12 @@ import React, { useEffect, useState } from 'react'
 const Services = () => {
   const [services, setServices] = useState([])
 
-  //   useEffect(() => {
-  //     fetch('https://localhost/service/getAll') // Replace with your backend endpoint
-  //       .then((response) => response.json())
-  //       .then((data) => setServices(data))
-  //       .catch((error) => console.error('Error fetching services:', error));
-  //   }, []);
+    useEffect(() => {
+      fetch('https://localhost/service/getAll') // Replace with your backend endpoint
+        .then((response) => response.json())
+        .then((data) => setServices(data))
+        .catch((error) => console.error('Error fetching services:', error));
+    }, []);
 
   if (services.length === 0) {
     return <div className="h-screen flex justify-center items-center">Loading...</div>
